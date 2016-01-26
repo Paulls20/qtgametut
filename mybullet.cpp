@@ -6,9 +6,13 @@
 #include <typeinfo>
 #include "enemy.h"
 
-MyBullet::MyBullet()
+MyBullet::MyBullet() : QObject(), QGraphicsPixmapItem()
 {
-    setRect(0, 0, 10, 50);
+    //setRect(0, 0, 10, 50);
+    setPos(0,0);
+    setPixmap(QPixmap(":/images/bullet.png"));
+
+
     QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(move()));
     timer->start(50);

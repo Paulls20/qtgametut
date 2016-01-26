@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include "myrect.h"
 #include "score.h"
+#include "health.h"
 
 namespace Ui {
 class Widget;
@@ -27,6 +28,7 @@ private:
     QGraphicsScene *scene;
     MyRect *rect;
     Score *score;
+    Health *health;
 
 };
 

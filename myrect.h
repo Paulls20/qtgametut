@@ -1,12 +1,13 @@
 #ifndef MYRECT_H
 #define MYRECT_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QKeyEvent>
 #include <QObject>
 #include "mybullet.h"
+#include <QMediaPlayer>
 
-class MyRect: public QObject, public QGraphicsRectItem
+class MyRect: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 
@@ -18,6 +19,9 @@ signals:
     void setScore();
 public slots:
     void scoreChange(MyBullet *bullet);
+
+private:
+    QMediaPlayer* mediaPlayer;
 
 };
 

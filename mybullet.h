@@ -2,9 +2,10 @@
 #define MYBULLET_H
 
 #include <QObject>
-#include <QGraphicsRectItem>
+//#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 
-class MyBullet : public QObject, public QGraphicsRectItem
+class MyBullet : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:

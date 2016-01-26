@@ -1,7 +1,7 @@
 #include "score.h"
 #include <QFont>
 
-Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent)
+Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent), score(0)
 {
     setPlainText("Score: 0");
     setDefaultTextColor(Qt::blue);

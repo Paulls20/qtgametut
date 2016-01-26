@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+       multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,12 +18,17 @@ SOURCES += main.cpp\
     myrect.cpp \
     mybullet.cpp \
     enemy.cpp \
-    score.cpp
+    score.cpp \
+    health.cpp
 
 HEADERS  += widget.h \
     myrect.h \
     mybullet.h \
     enemy.h \
-    score.h
+    score.h \
+    health.h
 
 FORMS    += widget.ui
+
+RESOURCES += \
+    res.qrc
