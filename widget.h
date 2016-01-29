@@ -22,6 +22,7 @@ public:
 
 private slots:
     void createEnemy();
+    void endGame();
 
 private:
     Ui::Widget *ui;

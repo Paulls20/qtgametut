@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QMessageBox>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -34,6 +35,7 @@ Widget::Widget(QWidget *parent) :
     QObject::connect(rect, SIGNAL(setScore()), score, SLOT(increase()));
 
     health = new Health();
+    QObject::connect(health, SIGNAL(gameOver()), this, SLOT(endGame()));
     scene->addItem(health);
 
     QMediaPlayer* bgMusic = new QMediaPlayer();
@@ -51,6 +53,12 @@ void Widget::createEnemy()
     Enemy *enemy =  new Enemy();
     QObject::connect(enemy, SIGNAL(reduceHealth()), health, SLOT(decrease()));
     scene->addItem(enemy);
+}
+
+void Widget::endGame()
+{
+    QMessageBox::information(this, QString("Game Over"), QString("Game Over"), QMessageBox::Ok);
+    qApp->exit(0);
 }
 
 Widget::~Widget()

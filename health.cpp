@@ -17,8 +17,12 @@ int Health::getHealth()
 
 void Health::decrease()
 {
+    if(_health > 1)
+      --_health;
+    else
+      emit gameOver();
 
-    --_health;
+
     setPlainText(QString("Health: ") + QString::number(_health));
 
 }
